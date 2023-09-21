@@ -43,11 +43,11 @@ json_data = {
 }
 
 # Load evo_model
-evo_model = RNNModel.load('C://Users//valer//OneDrive//0_DataScience//99_VSCode//Streamlit//models//evapotranspiration_model.pt', map_location='cpu')
+evo_model = RNNModel.load(json_data['evo_model'], map_location='cpu')
 evo_model.to_cpu()
 
 # Load pre_rate_model
-pre_rate_model = RNNModel.load('C://Users//valer//OneDrive//0_DataScience//99_VSCode//Streamlit//models//precipitation_rate_model.pt', map_location='cpu')
+pre_rate_model = RNNModel.load(json_ata['pre_rate_model'], map_location='cpu')
 pre_rate_model.to_cpu()
 
 # Format to datetime
