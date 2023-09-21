@@ -28,18 +28,10 @@ import plotly.graph_objects as go
 import plotly.figure_factory as ff
 
 # Set the work directory to retrieve all data
-script_dir = os.path.dirname(__file__)
-config_json = "config.json"
-rel_to_config_json_path = os.path.join(script_dir, config_json)
-
-with open(rel_to_config_json_path, 'r') as f:
-    # Load JSON data from file
-    json_data = json.load(f)
-
 json_data = {
     "data_columns" : "weathercode,temperature_2m_max,temperature_2m_min,temperature_2m_mean,apparent_temperature_max,apparent_temperature_min,apparent_temperature_mean,sunrise,sunset,shortwave_radiation_sum,precipitation_sum,rain_sum,snowfall_sum,precipitation_hours,windspeed_10m_max,windgusts_10m_max,winddirection_10m_dominant,et0_fao_evapotranspiration",
-    "evo_model" : f"{rel_to_config_json_path}evapotranspiration_model.pt",
-    "pre_rate_model" : f"{rel_to_config_json_path}precipitation_rate_model.pt"
+    "evo_model" : "evapotranspiration_model.pt",
+    "pre_rate_model" : "precipitation_rate_model.pt"
 }
 
 # Load evo_model
