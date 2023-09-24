@@ -35,11 +35,13 @@ json_data = {
 }
 
 # Load evo_model
-evo_model = RNNModel.load(open(r"evapotranspiration_model.pt", 'rb', encoding='utf-8'), map_location='cpu')
+# evo_model = RNNModel.load(open(r"evapotranspiration_model.pt", 'rb', encoding='utf-8'), map_location='cpu')
+evo_model = RNNModel.load("evapotranspiration_model.pt", map_location='cpu')
 evo_model.to_cpu()
 
 # Load pre_rate_model
-pre_rate_model = RNNModel.load(open(r'precipitation_rate_model.pt', 'rb', encoding='utf-8'), map_location='cpu')
+# pre_rate_model = RNNModel.load(open(r'precipitation_rate_model.pt', 'rb', encoding='utf-8'), map_location='cpu')
+pre_rate_model = RNNModel.load("precipitation_rate_model.pt", map_location='cpu')
 pre_rate_model.to_cpu()
 
 # Format to datetime
