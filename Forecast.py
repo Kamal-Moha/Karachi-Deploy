@@ -99,6 +99,8 @@ et0_fao_evapotranspiration = TimeSeries.from_series(concat_df['et0_fao_evapotran
 scaler = StandardScaler()
 transformer = Scaler(scaler)
 series_transformed = transformer.fit_transform(et0_fao_evapotranspiration)
+st.write(evo_model)
+"""
 evo_model.fit(series=series_transformed, verbose=0)
 print(f'MODEL: {evo_model}')
 evo_preds = evo_model.predict(10, series=series_transformed)
@@ -271,3 +273,4 @@ st.sidebar.write("""
                   """,
                 unsafe_allow_html=True
                   )
+"""
